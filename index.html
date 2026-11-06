@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#171511">
+  <meta name="description" content="Walk from a sunlit garden into a Catholic church and revisit treasured memories.">
+  <title>Memory Chapel</title>
+</head>
+<body>
+  <canvas id="game" aria-label="Three dimensional church garden and Catholic church. Walk inside to explore memory rooms."></canvas>
+  <div class="shade" aria-hidden="true"></div>
+  <header class="top-ui">
+    <div class="title"><small>From garden to sanctuary</small><strong>Memory Chapel</strong></div>
+    <div class="help" id="help">Move: arrows / WASD · E interact<br>Controller: D-pad / stick · A enter · B back<br>Drag or swipe to look around</div>
+  </header>
+  <div class="prompt" id="prompt" role="status" aria-live="polite"></div>
+  <div class="touch-controls" aria-label="Touch controls">
+    <div class="dpad" aria-label="Movement pad">
+      <button class="pad-button pad-up" data-dir="up" aria-label="Move forward">▲</button>
+      <button class="pad-button pad-down" data-dir="down" aria-label="Move backward">▼</button>
+      <button class="pad-button pad-left" data-dir="left" aria-label="Move left">◀</button>
+      <button class="pad-button pad-right" data-dir="right" aria-label="Move right">▶</button>
+    </div>
+    <button class="action-button" id="touchAction" aria-label="Interact">A · ENTER</button>
+  </div>
+  <div class="fade" id="fade"></div>
+  <section class="reading" id="reading" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="readingTitle">
+    <article class="reading-card">
+      <button class="reading-close" id="readingClose" type="button" aria-label="Close photo details">×</button>
+      <img class="reading-image" id="readingImage" alt="Memory photo">
+      <div class="reading-copy">
+        <div class="reading-date" id="readingDate"></div>
+        <h1 id="readingTitle"></h1>
+        <p id="readingStory"></p>
+      </div>
+    </article>
+  </section>
+  <div class="error" id="error" role="alert" hidden></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
